@@ -7,6 +7,12 @@ public class Board {
         setupInitialBoard();
     }
 
+    /*
+        7 W
+        |
+        1 B
+        0 1
+    */
     private void setupInitialBoard() {
         // Place pawns
         for (int i = 0; i < 8; i++) {
@@ -47,5 +53,9 @@ public class Board {
 
     public void setPiece(int row, int col, Piece piece) {
         grid[row][col] = piece;
+    }
+
+    public Piece[][] getGrid() {
+        return grid;
     }
 }
