@@ -1,4 +1,4 @@
-package com.example.chess.model;
+package com.chess.model;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

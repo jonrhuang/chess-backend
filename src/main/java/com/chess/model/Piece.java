@@ -1,4 +1,4 @@
-package com.example.chess.model;
+package com.chess.model;
 
 public class Piece {
   private final PieceType type;

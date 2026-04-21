@@ -1,4 +1,4 @@
-package com.example.chess.controller;
+package com.chess.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +14,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-import com.example.chess.model.Board;
-import com.example.chess.controller.ChessController;
-import com.example.chess.service.GameService;
-import com.example.chess.model.MoveRequest;
+import com.chess.model.Board;
+import com.chess.controller.ChessController;
+import com.chess.service.GameService;
+import com.chess.model.MoveRequest;
 
 @WebMvcTest(ChessController.class)
 class ChessControllerTest {

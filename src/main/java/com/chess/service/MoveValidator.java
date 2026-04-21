@@ -1,9 +1,9 @@
-package com.example.chess.service;
+package com.chess.service;
 
-import com.example.chess.model.Board;
-import com.example.chess.model.Piece;
-import com.example.chess.model.PieceColor;
-import com.example.chess.model.PieceType;
+import com.chess.model.Board;
+import com.chess.model.Piece;
+import com.chess.model.PieceColor;
+import com.chess.model.PieceType;
 
 public class MoveValidator {
 

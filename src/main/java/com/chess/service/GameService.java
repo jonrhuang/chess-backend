@@ -1,9 +1,9 @@
-package com.example.chess.service;
+package com.chess.service;
 
 import org.springframework.stereotype.Service;
 
-import com.example.chess.model.Board;
-import com.example.chess.model.Piece;
+import com.chess.model.Board;
+import com.chess.model.Piece;
 
 @Service
 public class GameService {

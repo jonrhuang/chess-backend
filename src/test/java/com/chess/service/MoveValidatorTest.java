@@ -1,10 +1,9 @@
-package com.example.chess.service;
+package com.chess.service;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.example.chess.model.*;
-import com.example.chess.service.*;
+import com.chess.model.*;
 
 public class MoveValidatorTest {
 
