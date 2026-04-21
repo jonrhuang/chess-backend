@@ -1,4 +1,6 @@
-package com.chess.model;
+package com.chess.model.board;
+
+import com.chess.model.piece.*;
 
 public class Board {
     private final Piece[][] grid = new Piece[8][8];

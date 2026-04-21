@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.chess.service.GameService;
-import com.chess.model.Board;
-import com.chess.model.MoveRequest;
+import com.chess.model.board.*;
+import com.chess.model.move.*;
 
 @RestController
 public class ChessController {

@@ -3,7 +3,8 @@ package com.chess.service;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.chess.model.*;
+import com.chess.model.board.*;
+import com.chess.model.piece.*;
 
 public class MoveValidatorTest {
 

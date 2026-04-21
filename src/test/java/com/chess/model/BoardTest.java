@@ -3,6 +3,9 @@ package com.chess.model;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.chess.model.board.*;
+import com.chess.model.piece.*;
+
 public class BoardTest {
 
   @Test

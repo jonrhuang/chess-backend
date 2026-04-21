@@ -14,10 +14,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-import com.chess.model.Board;
+import com.chess.model.board.*;
 import com.chess.controller.ChessController;
 import com.chess.service.GameService;
-import com.chess.model.MoveRequest;
+import com.chess.model.move.*;
 
 @WebMvcTest(ChessController.class)
 class ChessControllerTest {

@@ -1,4 +1,4 @@
-package com.chess.model;
+package com.chess.model.move;
 
 public class MoveRequest {
   private int startRow; 
