@@ -1,26 +1,27 @@
 package com.chess.model.piece;
 
-public class Piece {
-  private final PieceType type;
-  private final PieceColor color;
+import java.util.List;
 
-  public Piece(PieceType type, PieceColor color) {
-    this.type = type;
+import com.chess.model.board.*;
+
+public abstract class Piece {
+  private PieceColor color;
+  private boolean hasMoved;
+
+  public Piece(PieceColor color) {
     this.color = color;
-  }
-
-  public PieceType getType() {
-    return type;
+    hasMoved = false;
   }
 
   public PieceColor getColor() {
     return color;
   }
 
-  @Override
-  public String toString() {
-    return color + " " + type;
+  public boolean hasMoved() {
+    return this.hasMoved;
   }
+
+  abstract public List<Square> getCandidateMoves(Square current, Board board);
 
   public String emote() {
     return "implement emote";

@@ -18,7 +18,7 @@ public class ChessServiceTest {
 
     // New position has the piece
     assertNotNull(movedPiece);
-    assertEquals(PieceType.PAWN, movedPiece.getType());
+    assertInstanceOf(Pawn.class, movedPiece);
     assertEquals(PieceColor.WHITE, movedPiece.getColor());
 
     // Old position is empty

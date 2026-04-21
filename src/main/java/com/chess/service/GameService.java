@@ -14,7 +14,7 @@ public class GameService {
   }
 
   public void startNewGame() {
-    board = new Board();
+    board = BoardFactory.createStandardBoard();
     System.out.println(board);
   }
 

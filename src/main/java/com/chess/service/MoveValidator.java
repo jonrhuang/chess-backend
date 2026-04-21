@@ -29,14 +29,15 @@ public class MoveValidator {
       return false;
     }
 
-    return switch (piece.getType()) {
-      case PieceType.PAWN -> isValidPawnMove(board, piece, startRow, startCol, endRow, endCol);
-      case PieceType.ROOK -> isValidRookMove(board, startRow, startCol, endRow, endCol);
-      case PieceType.KNIGHT -> isValidKnightMove(startRow, startCol, endRow, endCol);
-      case PieceType.BISHOP -> isValidBishopMove(board, startRow, startCol, endRow, endCol);
-      case PieceType.QUEEN -> isValidRookMove(board, startRow, startCol, endRow, endCol) ||
+    return switch (piece.getClass().getSimpleName()) {
+      case "Pawn" -> isValidPawnMove(board, piece, startRow, startCol, endRow, endCol);
+      case "Rook" -> isValidRookMove(board, startRow, startCol, endRow, endCol);
+      case "Knight" -> isValidKnightMove(startRow, startCol, endRow, endCol);
+      case "Bishop" -> isValidBishopMove(board, startRow, startCol, endRow, endCol);
+      case "Queen" -> isValidRookMove(board, startRow, startCol, endRow, endCol) ||
         isValidBishopMove(board, startRow, startCol, endRow, endCol);
-      case PieceType.KING -> isValidKingMove(startRow, startCol, endRow, endCol);
+      case "King" -> isValidKingMove(startRow, startCol, endRow, endCol);
+      default -> throw new IllegalArgumentException("Unknown piece type: " + piece.getClass().getSimpleName());
     };
   }
 

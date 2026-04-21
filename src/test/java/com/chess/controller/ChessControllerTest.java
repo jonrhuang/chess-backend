@@ -8,14 +8,13 @@ import tools.jackson.databind.ObjectMapper;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.mockito.ArgumentMatchers.anyInt;
+//import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.*;
+//import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.chess.model.board.*;
-import com.chess.controller.ChessController;
 import com.chess.service.GameService;
 import com.chess.model.move.*;
 
@@ -33,7 +32,7 @@ class ChessControllerTest {
 
   @Test
   public void getBoard_returnsBoard() throws Exception {
-    Board mockBoard = new Board();
+    Board mockBoard = BoardFactory.createStandardBoard();
     when(gameService.getBoard()).thenReturn(mockBoard);
 
     mockMvc.perform(get("/board"))
@@ -46,7 +45,7 @@ class ChessControllerTest {
   @Test
   public void move_validRequest_returnsBoard() throws Exception {
     MoveRequest moveRequest = new MoveRequest(1, 0, 3, 0);
-    Board mockBoard = new Board();
+    Board mockBoard = BoardFactory.createStandardBoard();
     when(gameService.getBoard()).thenReturn(mockBoard);
 
     mockMvc.perform(post("/move")
@@ -62,7 +61,7 @@ class ChessControllerTest {
   @Test
   public void move_callsMovePieceWithCorrectArgs() throws Exception {
     MoveRequest moveRequest = new MoveRequest(6, 4, 4, 4);
-    when(gameService.getBoard()).thenReturn(new Board());
+    when(gameService.getBoard()).thenReturn(BoardFactory.createStandardBoard());
 
     mockMvc.perform(post("/move")
         .contentType(MediaType.APPLICATION_JSON)

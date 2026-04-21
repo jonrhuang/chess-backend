@@ -10,7 +10,7 @@ public class MoveValidatorTest {
 
   @Test
   void testPawnMoveOneSpace() {
-    Board board = new Board();
+    Board board = BoardFactory.createStandardBoard();
 
     assertTrue(MoveValidator.isValidMove(board,
         1, 0,
@@ -23,7 +23,7 @@ public class MoveValidatorTest {
 
   @Test
   void testPawnMoveTwoSpace() {
-    Board board = new Board();
+    Board board = BoardFactory.createStandardBoard();
 
     assertTrue(MoveValidator.isValidMove(board,
         1, 0,
@@ -36,7 +36,7 @@ public class MoveValidatorTest {
 
   @Test
   void testPawnIllegalMove() {
-    Board board = new Board();
+    Board board = BoardFactory.createStandardBoard();
 
     assertFalse(MoveValidator.isValidMove(board,
         1, 0,
@@ -49,12 +49,10 @@ public class MoveValidatorTest {
 
   @Test
   void testRookMove() {
-    Board board = new Board();
-
-    Piece piece = new Piece(PieceType.ROOK, PieceColor.BLACK);
+    Board board = BoardFactory.createEmptyBoard();
 
     // Put Rook in middle of board
-    board.setPiece(4, 4, piece);
+    board.setPiece(4, 4, new Rook(PieceColor.BLACK));
 
     assertTrue(MoveValidator.isValidMove(board,
         4, 4,
@@ -75,7 +73,7 @@ public class MoveValidatorTest {
 
   @Test
   void testRookIllegalMove() {
-    Board board = new Board();
+    Board board = BoardFactory.createStandardBoard();
 
     // Blocked
     assertFalse(MoveValidator.isValidMove(board,
@@ -87,7 +85,7 @@ public class MoveValidatorTest {
         0, 4));
 
     board.setPiece(4, 4,
-        new Piece(PieceType.ROOK, PieceColor.BLACK));
+        new Rook(PieceColor.BLACK));
 
     assertFalse(MoveValidator.isValidMove(board,
         4, 4,
@@ -96,12 +94,11 @@ public class MoveValidatorTest {
 
   @Test
   void testKnightMove() {
-    Board board = new Board();
-    board.clear();
+    Board board = BoardFactory.createEmptyBoard();
 
     // Put knight in middle of board
     board.setPiece(3, 3,
-        new Piece(PieceType.KNIGHT, PieceColor.BLACK));
+        new Knight(PieceColor.BLACK));
 
     assertTrue(MoveValidator.isValidMove(board,
         3, 3,
@@ -120,7 +117,7 @@ public class MoveValidatorTest {
         4, 1));
 
     board.setPiece(5, 3,
-        new Piece(PieceType.KNIGHT, PieceColor.BLACK));
+        new Knight(PieceColor.BLACK));
 
     assertTrue(MoveValidator.isValidMove(board,
         5, 3,
@@ -141,12 +138,11 @@ public class MoveValidatorTest {
 
   @Test
   void testKnightIllegalMove() {
-    Board board = new Board();
-    board.clear();
+    Board board = BoardFactory.createEmptyBoard();
 
     // Put knight in middle of board
     board.setPiece(3, 3,
-        new Piece(PieceType.KNIGHT, PieceColor.BLACK));
+        new Knight(PieceColor.BLACK));
 
     assertFalse(MoveValidator.isValidMove(board,
         3, 3,
@@ -159,12 +155,11 @@ public class MoveValidatorTest {
 
   @Test
   void testBishopMove() {
-    Board board = new Board();
-    board.clear();
+    Board board = BoardFactory.createEmptyBoard();
 
     // Put bishop in middle of board
     board.setPiece(3, 3,
-        new Piece(PieceType.BISHOP, PieceColor.BLACK));
+        new Bishop(PieceColor.BLACK));
 
     assertTrue(MoveValidator.isValidMove(board,
         3, 3,
@@ -185,12 +180,11 @@ public class MoveValidatorTest {
 
   @Test
   void testBishopIllegalMove() {
-    Board board = new Board();
-    board.clear();
+    Board board = BoardFactory.createEmptyBoard();
 
     // Put bishop in middle of board
     board.setPiece(3, 3,
-        new Piece(PieceType.BISHOP, PieceColor.BLACK));
+        new Bishop(PieceColor.BLACK));
 
     assertFalse(MoveValidator.isValidMove(board,
         3, 3,
@@ -211,11 +205,10 @@ public class MoveValidatorTest {
 
   @Test
   void testQueenMove() {
-    Board board = new Board();
-    board.clear();
+    Board board = BoardFactory.createEmptyBoard();
 
     board.setPiece(3, 3,
-        new Piece(PieceType.QUEEN, PieceColor.WHITE));
+        new Queen(PieceColor.WHITE));
 
     // Lateral moves
     assertTrue(MoveValidator.isValidMove(board,
@@ -248,11 +241,10 @@ public class MoveValidatorTest {
 
   @Test
   void testQueenIllegalMove() {
-    Board board = new Board();
-    board.clear();
+    Board board = BoardFactory.createEmptyBoard();
 
     board.setPiece(3, 3,
-        new Piece(PieceType.QUEEN, PieceColor.WHITE));
+        new Queen(PieceColor.WHITE));
 
     assertFalse(MoveValidator.isValidMove(board,
         3, 3,
@@ -270,11 +262,10 @@ public class MoveValidatorTest {
 
   @Test
   void testKingMove() {
-    Board board = new Board();
-    board.clear();
+    Board board = BoardFactory.createEmptyBoard();
 
     board.setPiece(3, 3,
-        new Piece(PieceType.KING, PieceColor.WHITE));
+        new King(PieceColor.WHITE));
 
     assertTrue(MoveValidator.isValidMove(board,
         3, 3,
@@ -311,11 +302,10 @@ public class MoveValidatorTest {
 
   @Test
   void testKingIllegalMove() {
-    Board board = new Board();
-    board.clear();
+    Board board = BoardFactory.createEmptyBoard();
 
     board.setPiece(3, 3,
-        new Piece(PieceType.KING, PieceColor.WHITE));
+        new King(PieceColor.WHITE));
 
     assertFalse(MoveValidator.isValidMove(board,
         3, 3,
